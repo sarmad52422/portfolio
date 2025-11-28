@@ -1,421 +1,884 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" >
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sarmad Ali — Senior Mobile & AI Engineer</title>
-  <meta name="description" content="Senior Mobile Developer | Kotlin • Swift • Flutter • React Native • AI & LLM Integrations"/>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sarmad Ali — Senior Mobile & AI Engineer</title>
+    <meta
+      name="description"
+      content="Senior Mobile Developer | Kotlin • Swift • Flutter • React Native • AI & LLM Integrations"
+    />
 
-  <!-- Tailwind + AOS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Tailwind + AOS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { sans: ['"Poppins"', 'Inter', 'system-ui', 'sans-serif'] },
-          colors: {
-            primaryLight: '#7C3AED',
-            primaryDark: '#4C1D95',
-            accent: '#A78BFA',
-            bgLightStart: '#F9FAFB',
-            bgLightEnd: '#E0E7FF',
-            bgDarkStart: '#0F172A',
-            bgDarkEnd: '#1E293B',
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Poppins"', "Inter", "system-ui", "sans-serif"],
+            },
+            colors: {
+              primaryLight: "#7C3AED",
+              primaryDark: "#4C1D95",
+              accent: "#A78BFA",
+              bgLightStart: "#F9FAFB",
+              bgLightEnd: "#E0E7FF",
+              bgDarkStart: "#0F172A",
+              bgDarkEnd: "#1E293B",
+            },
+            boxShadow: {
+              "soft-glow": "0 4px 30px rgba(124, 58, 237, 0.4)",
+              glass: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+            },
+            borderRadius: {
+              "xl-glass": "1.5rem",
+            },
           },
-          boxShadow: {
-            'soft-glow': '0 4px 30px rgba(124, 58, 237, 0.4)',
-            'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-          },
-          borderRadius: {
-            'xl-glass': '1.5rem',
-          },
-        }
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <style>
+      /* Glass effect utility */
+      .glass {
+        background: rgba(255 255 255 / 0.15);
+        backdrop-filter: saturate(180%) blur(12px);
+        -webkit-backdrop-filter: saturate(180%) blur(12px);
+        border: 1px solid rgba(255 255 255 / 0.3);
       }
-    }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    </style>
+  </head>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-  <style>
-    /* Glass effect utility */
-    .glass {
-      background: rgba(255 255 255 / 0.15);
-      backdrop-filter: saturate(180%) blur(12px);
-      -webkit-backdrop-filter: saturate(180%) blur(12px);
-      border: 1px solid rgba(255 255 255 / 0.3);
-    }
-  </style>
-</head>
-
-<body class="bg-gradient-to-br from-bgLightStart to-bgLightEnd dark:from-bgDarkStart dark:to-bgDarkEnd text-gray-900 dark:text-gray-100 min-h-screen font-sans">
-
-  <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass shadow-glass backdrop-blur-xl">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#hero" class="flex items-center gap-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-primaryLight to-accent flex items-center justify-center text-white font-extrabold text-2xl tracking-wide select-none">SA</div>
-        <div>
-          <h1 class="font-extrabold text-xl">Sarmad Ali</h1>
-          <p class="text-sm text-gray-600 dark:text-gray-400 -mt-1">Senior Mobile & AI Engineer</p>
-        </div>
-      </a>
-      <nav class="hidden md:flex gap-10 text-sm font-semibold tracking-wide uppercase text-primaryDark dark:text-accent">
-        <a href="#skills" class="hover:text-primaryLight transition duration-300">Skills</a>
-        <a href="#projects" class="hover:text-primaryLight transition duration-300">Projects</a>
-        <a href="#experience" class="hover:text-primaryLight transition duration-300">Experience</a>
-        <a href="#research" class="hover:text-primaryLight transition duration-300">Research</a>
-        <a href="#contact" class="hover:text-primaryLight transition duration-300">Contact</a>
-      </nav>
-      <div class="flex items-center gap-4">
-        <button id="themeToggle" class="p-2 rounded-lg hover:bg-primaryLight/20 transition" aria-label="Toggle Dark Mode">
-          <i class="fas fa-moon text-xl"></i>
-        </button>
-        <a href="#contact" class="hidden md:inline-block px-6 py-2 bg-gradient-to-r from-primaryLight to-accent text-white rounded-full font-semibold shadow-lg hover:shadow-primaryLight/80 hover:scale-105 transition">Hire Me</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section id="hero" class="pt-28 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center" data-aos="fade-up">
-    <div>
-      <h1 class="text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-primaryLight to-accent select-text">Sarmad Ali</h1>
-      <p class="mt-6 text-xl text-gray-700 dark:text-gray-300 max-w-xl leading-relaxed">
-        Senior Mobile Application Developer with <span class="font-semibold">10+ years</span> in native Android (Kotlin/Java),
-        <span class="font-semibold">5 years</span> in Flutter & React Native, and <span class="font-semibold">3 years</span> building native iOS apps with Swift/SwiftUI.
-      </p>
-      <p class="mt-5 text-lg text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
-        Expert in architecting and developing high-performance, complex mobile systems with pixel-perfect UI/UX and seamless AI integrations (ChatGPT, custom fine-tuned LLMs).
-        Worked remotely with global leaders: ShaperGap, Systems Limited, Netsol.
-      </p>
-      <div class="mt-10 flex flex-wrap gap-5">
-        <a href="#projects" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primaryLight to-accent text-white rounded-full font-semibold shadow-lg hover:shadow-accent/80 hover:scale-105 transition">
-          View My Work <i class="fas fa-arrow-right"></i>
+  <body
+    class="bg-gradient-to-br from-bgLightStart to-bgLightEnd dark:from-bgDarkStart dark:to-bgDarkEnd text-gray-900 dark:text-gray-100 min-h-screen font-sans"
+  >
+    <!-- NAVBAR -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 glass shadow-glass backdrop-blur-xl"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="#hero" class="flex items-center gap-3">
+          <div
+            class="w-12 h-12 rounded-xl bg-gradient-to-tr from-primaryLight to-accent flex items-center justify-center text-white font-extrabold text-2xl tracking-wide select-none"
+          >
+            SA
+          </div>
+          <div>
+            <h1 class="font-extrabold text-xl">Sarmad Ali</h1>
+            <p class="text-sm text-gray-600 dark:text-gray-400 -mt-1">
+              Senior Mobile & AI Engineer
+            </p>
+          </div>
         </a>
-        <a href="#contact" class="inline-block px-8 py-4 border-2 border-primaryLight text-primaryDark dark:text-accent rounded-full font-semibold hover:bg-primaryLight hover:text-white transition">
-          Get In Touch
-        </a>
+        <nav
+          class="hidden md:flex gap-10 text-sm font-semibold tracking-wide uppercase text-primaryDark dark:text-accent"
+        >
+          <a
+            href="#skills"
+            class="hover:text-primaryLight transition duration-300"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="hover:text-primaryLight transition duration-300"
+            >Projects</a
+          >
+          <a
+            href="#experience"
+            class="hover:text-primaryLight transition duration-300"
+            >Experience</a
+          >
+          <a
+            href="#research"
+            class="hover:text-primaryLight transition duration-300"
+            >Research</a
+          >
+          <a
+            href="#contact"
+            class="hover:text-primaryLight transition duration-300"
+            >Contact</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <button
+            id="themeToggle"
+            class="p-2 rounded-lg hover:bg-primaryLight/20 transition"
+            aria-label="Toggle Dark Mode"
+          >
+            <i class="fas fa-moon text-xl"></i>
+          </button>
+          <a
+            href="#contact"
+            class="hidden md:inline-block px-6 py-2 bg-gradient-to-r from-primaryLight to-accent text-white rounded-full font-semibold shadow-lg hover:shadow-primaryLight/80 hover:scale-105 transition"
+            >Hire Me</a
+          >
+        </div>
       </div>
+    </header>
 
-      <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-xl text-center select-none">
-        <div>
-          <div class="text-4xl font-extrabold text-primaryLight">10+</div>
-          <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">Years Android</div>
-        </div>
-        <div>
-          <div class="text-4xl font-extrabold text-accent">5+</div>
-          <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">Years Flutter/RN</div>
-        </div>
-        <div>
-          <div class="text-4xl font-extrabold text-pink-600">50+</div>
-          <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">Apps Delivered</div>
-        </div>
-        <div>
-          <div class="text-4xl font-extrabold text-emerald-500">AI</div>
-          <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">LLM Integrations</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="relative max-w-md mx-auto rounded-xl glass p-8 shadow-glass border border-white/30" data-aos="fade-left">
-      <img
-        src="port.jpeg"
-        alt="Sarmad Ali portrait"
-        class="rounded-xl shadow-lg"
-        loading="lazy"
-      />
-      <div class="mt-8 text-center">
-        <h3 class="text-2xl font-semibold">Available for Remote & Contract</h3>
-        <p class="mt-3 text-gray-700 dark:text-gray-400 leading-relaxed px-4">
-          Open to senior/lead mobile roles, AI integration projects, or consulting.
+    <!-- HERO -->
+    <section
+      id="hero"
+      class="pt-28 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center"
+      data-aos="fade-up"
+    >
+      <div>
+        <h1
+          class="text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-primaryLight to-accent select-text"
+        >
+          Sarmad Ali
+        </h1>
+        <p
+          class="mt-6 text-xl text-gray-700 dark:text-gray-300 max-w-xl leading-relaxed"
+        >
+          Senior Mobile Application Developer with
+          <span class="font-semibold">10+ years</span> in native Android
+          (Kotlin/Java), <span class="font-semibold">5 years</span> in Flutter &
+          React Native, and <span class="font-semibold">3 years</span> building
+          native iOS apps with Swift/SwiftUI.
         </p>
-        <div class="mt-6 flex justify-center gap-6 text-white text-lg">
-          <a href="https://linkedin.com/in/placeholder" target="_blank" rel="noopener" aria-label="LinkedIn" class="bg-primaryLight rounded-lg p-4 hover:scale-110 transition shadow-lg"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/sarmad52422/" target="_blank" rel="noopener" aria-label="GitHub" class="bg-gray-900 rounded-lg p-4 hover:scale-110 transition shadow-lg"><i class="fab fa-github"></i></a>
-          <a href="mailto:sarmad.52422@gmail.com" aria-label="Email" class="bg-accent rounded-lg p-4 hover:scale-110 transition shadow-lg"><i class="fas fa-envelope"></i></a>
+        <p
+          class="mt-5 text-lg text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed"
+        >
+          Expert in architecting and developing high-performance, complex mobile
+          systems with pixel-perfect UI/UX and seamless AI integrations
+          (ChatGPT, custom fine-tuned LLMs). Worked remotely with global
+          leaders: ShaperGap, Systems Limited, Netsol.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-5">
+          <a
+            href="#projects"
+            class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primaryLight to-accent text-white rounded-full font-semibold shadow-lg hover:shadow-accent/80 hover:scale-105 transition"
+          >
+            View My Work <i class="fas fa-arrow-right"></i>
+          </a>
+          <a
+            href="#contact"
+            class="inline-block px-8 py-4 border-2 border-primaryLight text-primaryDark dark:text-accent rounded-full font-semibold hover:bg-primaryLight hover:text-white transition"
+          >
+            Get In Touch
+          </a>
+        </div>
+
+        <div
+          class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-xl text-center select-none"
+        >
+          <div>
+            <div class="text-4xl font-extrabold text-primaryLight">10+</div>
+            <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+              Years Android
+            </div>
+          </div>
+          <div>
+            <div class="text-4xl font-extrabold text-accent">20+</div>
+            <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+              Years Flutter/RN
+            </div>
+          </div>
+          <div>
+            <div class="text-4xl font-extrabold text-pink-600">50+</div>
+            <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+              Apps Delivered
+            </div>
+          </div>
+          <div>
+            <div class="text-4xl font-extrabold text-emerald-500">AI</div>
+            <div class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+              LLM Integrations
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="py-20 px-6 max-w-7xl mx-auto" data-aos="fade-up">
-    <h2 class="text-4xl font-extrabold text-center mb-16">Technical Expertise</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
-      <article class="glass p-8 rounded-xl border border-white/20 shadow-glass hover:shadow-glow transition cursor-default">
-        <i class="fas fa-mobile-alt text-5xl text-primaryLight mb-6"></i>
-        <h3 class="text-2xl font-semibold mb-4">Mobile Development</h3>
-        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-          <li><strong>Native Android:</strong> Kotlin, Java (10+ years)</li>
-          <li><strong>iOS:</strong> Swift, SwiftUI (3 years)</li>
-          <li><strong>Cross-Platform:</strong> Flutter, React Native (5 years)</li>
-          <li>(React Native) Redux, Zustand, (Flutter) GetX, Bloc (State Management)</li>
-        </ul>
-      </article>
-      <article class="glass p-8 rounded-xl border border-white/20 shadow-glass hover:shadow-glow transition cursor-default">
-        <i class="fas fa-database text-5xl text-accent mb-6"></i>
-        <h3 class="text-2xl font-semibold mb-4">Databases & ORM</h3>
-        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-          <li>PostgreSQL, MySQL (10+ years raw SQL)</li>
-          <li>Prisma, Sequelize, TypeORM, Django ORM (5 years)</li>
-          <li>MongoDB, Firebase, Realm (NoSQL)</li>
-          <li>Laravel Eloquent ORM</li>
-        </ul>
-      </article>
-      <article class="glass p-8 rounded-xl border border-white/20 shadow-glass hover:shadow-glow transition cursor-default">
-        <i class="fas fa-robot text-5xl text-pink-600 mb-6"></i>
-        <h3 class="text-2xl font-semibold mb-4">AI & LLM Integrations</h3>
-        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-          <li>ChatGPT, Flash AI & custom fine-tuned models</li>
-          <li>Model training, hosting, and deployment</li>
-          <li>Ontology extraction & relation modeling with BERT/RoBERTa/DeBERTa</li>
-        </ul>
-      </article>
-      <article class="glass p-8 rounded-xl border border-white/20 shadow-glass hover:shadow-glow transition cursor-default">
-        <i class="fas fa-code text-5xl text-emerald-500 mb-6"></i>
-        <h3 class="text-2xl font-semibold mb-4">Backend Development</h3>
-        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-          <li>Node.js (Express, NestJS)</li>
-          <li>PHP (Laravel), Python (FastAPI)</li>
-          <li>Python (Django), DRF</li>
-          <li>REST APIs, Microservices</li>
-        </ul>
-      </article>
-      <article class="glass p-8 rounded-xl border border-white/20 shadow-glass hover:shadow-glow transition cursor-default">
-        <i class="fas fa-cogs text-5xl text-yellow-500 mb-6"></i>
-        <h3 class="text-2xl font-semibold mb-4">DevOps & Cloud</h3>
-        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-          <li>Git, CI/CD Pipelines</li>
-          <li>Docker Containers</li>
-          <li>AWS & GCP Cloud Platforms</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="py-20 px-6 max-w-7xl mx-auto" data-aos="fade-up">
-    <h2 class="text-4xl font-extrabold text-center mb-16">Featured Projects</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-      <!-- Project Card Template -->
-      <article class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition">
-        <img src="p1.png" alt="Eatmeonline uk" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition">Eatmeonline UK</h3>
-          <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">Node.js • PostgreSQL • ExpressJS • ReactJS • NextJS </p>
-          <div class="flex gap-3">
-            <a href="https://eatmeonline.co.uk/" class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition">Live App</a>
-            <a href="#" class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition">Case Study</a>
+      <div
+        class="relative max-w-md mx-auto rounded-xl glass p-8 shadow-glass border border-white/30"
+        data-aos="fade-left"
+      >
+        <img
+          src="developer_image.jpeg"
+          alt="Sarmad Ali portrait"
+          class="rounded-xl shadow-lg"
+          loading="lazy"
+        />
+        <div class="mt-8 text-center">
+          <h3 class="text-2xl font-semibold">
+            Available for Remote & Contract
+          </h3>
+          <p class="mt-3 text-gray-700 dark:text-gray-400 leading-relaxed px-4">
+            Open to senior/lead mobile roles, AI integration projects, or
+            consulting.
+          </p>
+          <div class="mt-6 flex justify-center gap-6 text-white text-lg">
+            <a
+              href="https://www.linkedin.com/in/sarmad-ali-b281522b2/
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              class="bg-primaryLight rounded-lg p-4 hover:scale-110 transition shadow-lg"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://github.com/sarmad52422/"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+              class="bg-gray-900 rounded-lg p-4 hover:scale-110 transition shadow-lg"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="mailto:sarmad.52422@gmail.com"
+              aria-label="Email"
+              class="bg-accent rounded-lg p-4 hover:scale-110 transition shadow-lg"
+              ><i class="fas fa-envelope"></i
+            ></a>
           </div>
         </div>
-      </article>
-      <!-- Repeat placeholder cards for 5 more projects -->
-      <article class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition">
-        <img src="jimiani_ai.png" alt="Project Two" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition">Jimani AI</h3>
-          <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">Swift • SwiftUI • NextJS(Web Version and Backend) • Telnyx</p>
-          <div class="flex gap-3">
-            <a href="#" class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition">Live App (Comming Soon)</a>
-            <a href="https://github.com/sarmad52422/Jimani-IOS-App" class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition">Github</a>
-          </div>
-        </div>
-      </article>
-       <article class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition">
-        <img src="call-fan.png" alt="Project Two" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition">Ai-Call Fans</h3>
-          <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">Swift • Supabase(PostgreSQL) • Stripe</p>
-          <div class="flex gap-3">
-            <a href="#" class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition">Live App(Comming Soon)</a>
-            <a href="https://github.com/sovanza-inc/Call-Babe-IOS-APP" class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition">Github</a>
-          </div>
-        </div>
-      </article>
-       <article class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition">
-        <img src="ev-outlet.png" alt="Project Two" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition">E Charger Outlet Booking Platform</h3>
-          <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">Flutter • Firebaes • Stripe</p>
-          <div class="flex gap-3">
-            <a href="https://apps.apple.com/us/app/evgo-find-a-fast-ev-charger/id1281660968" class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition">Live App</a>
-            <a href="https://github.com/sarmad52422/E-Charger-Outlet" class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition">Github</a>
-          </div>
-        </div>
-      </article>
-       <article class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition">
-        <img src="https://via.placeholder.com/600x380/9333EA/fff?text=Project+Two" alt="Project Two" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition">Project Two</h3>
-          <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">React Native • AWS Lambda • MongoDB</p>
-          <div class="flex gap-3">
-            <a href="#" class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition">Live App</a>
-            <a href="#" class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition">Case Study</a>
-          </div>
-        </div>
-      </article>
-       <article class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition">
-        <img src="https://via.placeholder.com/600x380/9333EA/fff?text=Project+Two" alt="Project Two" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition">Project Two</h3>
-          <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">React Native • AWS Lambda • MongoDB</p>
-          <div class="flex gap-3">
-            <a href="#" class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition">Live App</a>
-            <a href="#" class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition">Case Study</a>
-          </div>
-        </div>
-      </article>
-       <article class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition">
-        <img src="https://via.placeholder.com/600x380/9333EA/fff?text=Project+Two" alt="Project Two" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition">Project Two</h3>
-          <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">React Native • AWS Lambda • MongoDB</p>
-          <div class="flex gap-3">
-            <a href="#" class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition">Live App</a>
-            <a href="#" class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition">Case Study</a>
-          </div>
-        </div>
-      </article>
-       <article class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition">
-        <img src="https://via.placeholder.com/600x380/9333EA/fff?text=Project+Two" alt="Project Two" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition">Project Two</h3>
-          <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">React Native • AWS Lambda • MongoDB</p>
-          <div class="flex gap-3">
-            <a href="#" class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition">Live App</a>
-            <a href="#" class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition">Case Study</a>
-          </div>
-        </div>
-      </article>
-       <article class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition">
-        <img src="https://via.placeholder.com/600x380/9333EA/fff?text=Project+Two" alt="Project Two" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition">Project Two</h3>
-          <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">React Native • AWS Lambda • MongoDB</p>
-          <div class="flex gap-3">
-            <a href="#" class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition">Live App</a>
-            <a href="#" class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition">Case Study</a>
-          </div>
-        </div>
-      </article>
-      <!-- More projects omitted for brevity -->
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="py-20 px-6 max-w-7xl mx-auto" data-aos="fade-up">
-    <h2 class="text-4xl font-extrabold text-center mb-16">Professional Experience</h2>
-    <div class="space-y-12 max-w-4xl mx-auto text-gray-700 dark:text-gray-300">
-      <article>
-        <h3 class="text-2xl font-semibold text-primaryLight mb-2">ShaperGap</h3>
-        <p class="mb-2 italic">Senior Mobile Developer (Remote) — 2020 to Present</p>
-        <ul class="list-disc pl-6 space-y-1">
-          <li>Developed complex mobile applications with Kotlin, Flutter, and React Native.</li>
-          <li>Led AI integration projects, including custom LLM deployment and fine-tuning.</li>
-          <li>Collaborated remotely with cross-functional teams for seamless delivery.</li>
-        </ul>
-      </article>
-
-      <article>
-        <h3 class="text-2xl font-semibold text-accent mb-2">Systems Limited</h3>
-        <p class="mb-2 italic">Mobile Application Developer (Remote) — 2017 to 2020</p>
-        <ul class="list-disc pl-6 space-y-1">
-          <li>Implemented native Android apps with Kotlin and Java.</li>
-          <li>Worked on React
-          <li>Worked on React Native cross-platform projects with state management solutions like Redux and Zustand.</li>
-          <li>Integrated backend APIs and optimized database queries for performance.</li>
-        </ul>
-      </article>
-
-      <article>
-        <h3 class="text-2xl font-semibold text-pink-600 mb-2">Netsol</h3>
-        <p class="mb-2 italic">Mobile Developer (Remote) — 2013 to 2017</p>
-        <ul class="list-disc pl-6 space-y-1">
-          <li>Built and maintained native Android applications using Java and Kotlin.</li>
-          <li>Collaborated with backend and design teams to deliver feature-rich apps.</li>
-          <li>Contributed to debugging and performance tuning to ensure quality releases.</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <!-- RESEARCH -->
-  <section id="research" class="py-20 px-6 max-w-7xl mx-auto" data-aos="fade-up">
-    <h2 class="text-4xl font-extrabold text-center mb-16">Research & Innovations</h2>
-    <div class="max-w-3xl mx-auto text-gray-700 dark:text-gray-300 space-y-6">
-      <p>
-        I am actively engaged in advanced AI research focused on <strong>ontology construction</strong> leveraging Large Language Models (LLMs).
-        This involves extracting entities and their relationships to build semantic models that enhance AI understanding.
-      </p>
-      <p>
-        My work includes fine-tuning transformer models like <strong>BERT</strong> and <strong>BERTRa</strong> to optimize domain-specific performance and accuracy.
-      </p>
-      <p>
-        I also deploy and maintain custom AI models integrated into mobile and backend systems to enable intelligent features such as conversational assistants and predictive analytics.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-20 px-6 max-w-7xl mx-auto" data-aos="fade-up">
-    <h2 class="text-4xl font-extrabold text-center mb-16">Get In Touch</h2>
-    <div class="max-w-xl mx-auto glass rounded-xl p-8 border border-white/20 shadow-glass">
-      <form action="#" method="POST" class="space-y-6">
-        <div>
-          <label for="name" class="block mb-2 font-semibold text-gray-800 dark:text-gray-200">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your full name" required
-            class="w-full rounded-md border border-gray-300 dark:border-gray-600 px-4 py-2 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primaryLight outline-none" />
-        </div>
-        <div>
-          <label for="email" class="block mb-2 font-semibold text-gray-800 dark:text-gray-200">Email</label>
-          <input type="email" id="email" name="email" placeholder="your.email@example.com" required
-            class="w-full rounded-md border border-gray-300 dark:border-gray-600 px-4 py-2 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primaryLight outline-none" />
-        </div>
-        <div>
-          <label for="message" class="block mb-2 font-semibold text-gray-800 dark:text-gray-200">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required
-            class="w-full rounded-md border border-gray-300 dark:border-gray-600 px-4 py-2 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primaryLight outline-none resize-none"></textarea>
-        </div>
-        <button type="submit" class="w-full py-3 bg-gradient-to-r from-primaryLight to-accent text-white font-semibold rounded-full shadow-lg hover:shadow-accent/80 hover:scale-105 transition">
-          Send Message
-        </button>
-      </form>
-      <div class="mt-10 text-center text-gray-600 dark:text-gray-400 select-text">
-        <p><i class="fas fa-phone-alt mr-2"></i> +92 300 0256232</p>
-        <p><i class="fas fa-envelope mr-2"></i> <a href="mailto:sarmad.52422@gmail.com" class="underline hover:text-accent">sarmad.52422@gmail.com</a></p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="py-12 text-center bg-gradient-to-tr from-primaryLight to-accent text-white select-none">
-    <p>© 2025 Sarmad Ali. Crafted with passion & ☕.</p>
-  </footer>
+    <!-- SKILLS -->
+    <section
+      id="skills"
+      class="py-20 px-6 max-w-7xl mx-auto"
+      data-aos="fade-up"
+    >
+      <h2 class="text-4xl font-extrabold text-center mb-16">
+        Technical Expertise
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <article
+          class="glass p-8 rounded-xl border border-white/20 shadow-glass hover:shadow-glow transition cursor-default"
+        >
+          <i class="fas fa-mobile-alt text-5xl text-primaryLight mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4">Mobile Development</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li><strong>Native Android:</strong> Kotlin, Java (10+ years)</li>
+            <li><strong>iOS:</strong> Swift, SwiftUI (3 years)</li>
+            <li>
+              <strong>Cross-Platform:</strong> Flutter, React Native (5 years)
+            </li>
+            <li>
+              (React Native) Redux, Zustand, (Flutter) GetX, Bloc (State
+              Management)
+            </li>
+          </ul>
+        </article>
+        <article
+          class="glass p-8 rounded-xl border border-white/20 shadow-glass hover:shadow-glow transition cursor-default"
+        >
+          <i class="fas fa-database text-5xl text-accent mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4">Databases & ORM</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li>PostgreSQL, MySQL (10+ years raw SQL)</li>
+            <li>Prisma, Sequelize, TypeORM, Django ORM (5 years)</li>
+            <li>MongoDB, Firebase, Realm (NoSQL)</li>
+            <li>Laravel Eloquent ORM</li>
+          </ul>
+        </article>
+        <article
+          class="glass p-8 rounded-xl border border-white/20 shadow-glass hover:shadow-glow transition cursor-default"
+        >
+          <i class="fas fa-robot text-5xl text-pink-600 mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4">AI & LLM Integrations</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li>ChatGPT, Flash AI & custom fine-tuned models</li>
+            <li>Model training, hosting, and deployment</li>
+            <li>
+              Train these models for NER and Relations Extration
+              BERT/RoBERTa/DeBERTa
+            </li>
+          </ul>
+        </article>
+        <article
+          class="glass p-8 rounded-xl border border-white/20 shadow-glass hover:shadow-glow transition cursor-default"
+        >
+          <i class="fas fa-code text-5xl text-emerald-500 mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4">Backend Development</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Node.js (Express, NestJS)</li>
+            <li>PHP (Laravel), Python (FastAPI)</li>
+            <li>Python (Django), DRF</li>
+            <li>REST APIs, Microservices</li>
+          </ul>
+        </article>
+        <article
+          class="glass p-8 rounded-xl border border-white/20 shadow-glass hover:shadow-glow transition cursor-default"
+        >
+          <i class="fas fa-cogs text-5xl text-yellow-500 mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4">DevOps & Cloud</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Git, CI/CD Pipelines</li>
+            <li>Docker Containers</li>
+            <li>AWS & GCP Cloud Platforms</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-  <script>
-    AOS.init({ duration: 900, once: true });
+    <!-- PROJECTS -->
+    <section
+      id="projects"
+      class="py-20 px-6 max-w-7xl mx-auto"
+      data-aos="fade-up"
+    >
+      <h2 class="text-4xl font-extrabold text-center mb-16">
+        Featured Projects
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Project Card Template -->
+        <article
+          class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition"
+        >
+          <img
+            src="p1.png"
+            alt="Eatmeonline uk"
+            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3
+              class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition"
+            >
+              Eatmeonline UK
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4"
+            >
+              Node.js • PostgreSQL • ExpressJS • ReactJS • NextJS
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="https://eatmeonline.co.uk/"
+                class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition"
+                >Live App</a
+              >
+              <a
+                href="https://github.com/sarmad52422/spicy-chef"
+                class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition"
+                >Github</a
+              >
+            </div>
+          </div>
+        </article>
+        <!-- Repeat placeholder cards for 5 more projects -->
+        <article
+          class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition"
+        >
+          <img
+            src="jimiani_ai.png"
+            alt="Project Two"
+            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3
+              class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition"
+            >
+              Jimani AI
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4"
+            >
+              Swift(Apple) • SwiftUI • Kotlin(Android) • NextJS(Web Version and
+              Backend) • Telnyx
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition"
+                >Live App (Comming Soon)</a
+              >
+              <a
+                href="https://github.com/sarmad52422/Jimani-IOS-App"
+                class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition"
+                >Github</a
+              >
+            </div>
+          </div>
+        </article>
+        <article
+          class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition"
+        >
+          <img
+            src="call-fan.png"
+            alt="Project Two"
+            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3
+              class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition"
+            >
+              Ai-Call Fans
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4"
+            >
+              Swift • Supabase(PostgreSQL) • Stripe
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition"
+                >Live App(Comming Soon)</a
+              >
+              <a
+                href="https://github.com/sovanza-inc/Call-Babe-IOS-APP"
+                class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition"
+                >Github</a
+              >
+            </div>
+          </div>
+        </article>
+        <article
+          class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition"
+        >
+          <img
+            src="ev-outlet.png"
+            alt="Project Two"
+            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3
+              class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition"
+            >
+              E Charger Outlet Booking Platform
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4"
+            >
+              Flutter • Firebaes • Stripe
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="https://apps.apple.com/us/app/evgo-find-a-fast-ev-charger/id1281660968"
+                class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition"
+                >Live App</a
+              >
+              <a
+                href="https://github.com/sarmad52422/E-Charger-Outlet"
+                class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition"
+                >Github</a
+              >
+            </div>
+          </div>
+        </article>
+        <article
+          class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition"
+        >
+          <img
+            src="shaper.png"
+            alt="Project Two"
+            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3
+              class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition"
+            >
+              Shaper Plus(Gamifi Learning Platform)
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4"
+            >
+              NestJS • Fast API • Flash AI • Llama 4
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="https://shaper.plus/"
+                class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition"
+                >Live App</a
+              >
+              <a
+                href="https://github.com/sarmad52422/Shaper-Engine"
+                class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition"
+                >Github</a
+              >
+            </div>
+          </div>
+        </article>
+        <article
+          class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition"
+        >
+          <img
+            src="puls.png"
+            alt="Project Two"
+            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3
+              class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition"
+            >
+              Puls Track
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4"
+            >
+              React Native • GCP • PostgreSQL
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="https://pulsetrackapp.com/"
+                class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition"
+                >Live App</a
+              >
+              <a
+                href="https://github.com/sarmad52422/pulstrack"
+                class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition"
+                >Github</a
+              >
+            </div>
+          </div>
+        </article>
+        <article
+          class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition"
+        >
+          <img
+            src="diy_home.png"
+            alt="Project Two"
+            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3
+              class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition"
+            >
+              DIY HOME
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4"
+            >
+              React Native • Amazon EC2 • GPT-4o • MySQL • Laravel
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="https://ucanfix.com/"
+                class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition"
+                >Live App</a
+              >
+              <a
+                href="https://github.com/sarmad52422/DIY_HOME"
+                class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition"
+                >Github</a
+              >
+            </div>
+          </div>
+        </article>
+        <article
+          class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition"
+        >
+          <img
+            src="cement.png"
+            alt="Project Two"
+            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3
+              class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition"
+            >
+              Lucky Cement(Organization)
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4"
+            >
+              Kotlin • AWS EC2 • Firebase
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.luckycementrelease2&hl=en"
+                class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition"
+                >Live App</a
+              >
+            </div>
+          </div>
+        </article>
+        <article
+          class="group relative rounded-2xl shadow-glass glass border border-white/20 overflow-hidden cursor-pointer hover:shadow-glow transition"
+        >
+          <img
+            src="text_art.png"
+            alt="Project Two"
+            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3
+              class="text-xl font-semibold mb-2 text-primaryLight group-hover:text-accent transition"
+            >
+              Text Art (AI)
+            </h3>
+            <p
+              class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4"
+            >
+              Kotlin • Advance Data Structures • MySQL • Flux.1
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="px-4 py-2 bg-primaryLight/20 rounded-full text-primaryLight text-xs font-semibold hover:bg-primaryLight hover:text-white transition"
+                >In Progress</a
+              >
+              <a
+                href="https://github.com/sarmad52422/TextOnPhoto"
+                class="px-4 py-2 bg-primaryLight rounded-full text-white text-xs font-semibold hover:shadow-lg transition"
+                >Github</a
+              >
+            </div>
+          </div>
+        </article>
+        <!-- More projects omitted for brevity -->
+      </div>
+    </section>
 
-    const themeToggleBtn = document.getElementById('themeToggle');
-    const icon = themeToggleBtn.querySelector('i');
-    const savedTheme = localStorage.getItem('dark');
+    <!-- EXPERIENCE -->
+    <section
+      id="experience"
+      class="py-20 px-6 max-w-7xl mx-auto"
+      data-aos="fade-up"
+    >
+      <h2 class="text-4xl font-extrabold text-center mb-16">
+        Professional Experience
+      </h2>
+      <div
+        class="space-y-12 max-w-4xl mx-auto text-gray-700 dark:text-gray-300"
+      >
+        <article>
+          <h3 class="text-2xl font-semibold text-primaryLight mb-2">
+            ShaperGap
+          </h3>
+          <p class="mb-2 italic">
+            Senior Mobile Developer (Remote) — 2024 - 2025
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>
+              Led AI integration projects, including custom LLM deployment and
+              fine-tuning.
+            </li>
+            <li>
+              Worked on backend technologies such as FastAPI integrated with
+              Vertex AI and NestJS for developing the User Assessment backend.
+            </li>
+            <li>
+              Collaborated remotely with cross-functional teams for seamless
+              delivery.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3 class="text-2xl font-semibold text-primaryLight mb-2">TopSol</h3>
+          <p class="mb-2 italic">Teamleader 2021 - 2023</p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>
+              Developed cross-platform mobile applications using Flutter,
+              ensuring high performance and seamless user experience.
+            </li>
+            <li>
+              Designed and implemented scalable web applications using the MERN
+              stack (MongoDB, Express.js, React, Node.js), delivering robust and
+              maintainable solutions.
+            </li>
+          </ul>
+        </article>
 
-    if (savedTheme === '1' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      icon.classList.replace('fa-moon', 'fa-sun');
-    }
+        <article>
+          <h3 class="text-2xl font-semibold text-accent mb-2">
+            Systems Limited
+          </h3>
+          <p class="mb-2 italic">
+            Mobile Application Developer (Remote) — 2019 to 2020
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Implemented native Android apps with Kotlin and Java.</li>
+            <li>Worked on React</li>
+            <li>
+              Worked on React Native cross-platform projects with state
+              management solutions like Redux and Zustand.
+            </li>
+            <li>
+              Integrated backend APIs and optimized database queries for
+              performance.
+            </li>
+          </ul>
+        </article>
 
-    themeToggleBtn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      const isDark = document.documentElement.classList.contains('dark');
-      localStorage.setItem('dark', isDark ? '1' : '0');
-      icon.classList.toggle('fa-moon', !isDark);
-      icon.classList.toggle('fa-sun', isDark);
-    });
-  </script>
+        <article>
+          <h3 class="text-2xl font-semibold text-pink-600 mb-2">Freelancer</h3>
+          <p class="mb-2 italic">Mobile Developer (Remote) — 2016 to 2019</p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>
+              Built and maintained native Android applications using Java and
+              Kotlin.
+            </li>
+            <li>
+              Collaborated with backend and design teams to deliver feature-rich
+              apps.
+            </li>
+            <li>
+              Contributed to debugging and performance tuning to ensure quality
+              releases.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-</body>
+    <!-- RESEARCH -->
+    <section
+      id="research"
+      class="py-20 px-6 max-w-7xl mx-auto"
+      data-aos="fade-up"
+    >
+      <h2 class="text-4xl font-extrabold text-center mb-16">
+        Research & Innovations
+      </h2>
+      <div class="max-w-3xl mx-auto text-gray-700 dark:text-gray-300 space-y-6">
+        <p>
+          I am actively engaged in advanced AI research leveraging Large
+          Language Models (LLMs) to extract entities and their relationships
+          from unstructured text, building semantic models that improve AI
+          understanding.
+        </p>
+        <p>
+          My work includes retraining and fine-tuning transformer models such as
+          <strong>BERT</strong>, <strong>RoBERTa</strong>, and
+          <strong>DeBERTa</strong> to optimize domain-specific performance and
+          accuracy.
+        </p>
+        <p>
+          Additionally, I deploy and maintain custom AI models integrated into
+          mobile and backend systems to enable intelligent features such as
+          conversational assistants and predictive analytics.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section
+      id="contact"
+      class="py-20 px-6 max-w-7xl mx-auto"
+      data-aos="fade-up"
+    >
+      <h2 class="text-4xl font-extrabold text-center mb-16">Get In Touch</h2>
+      <div
+        class="max-w-xl mx-auto glass rounded-xl p-8 border border-white/20 shadow-glass"
+      >
+        <form action="#" method="POST" class="space-y-6">
+          <div>
+            <label
+              for="name"
+              class="block mb-2 font-semibold text-gray-800 dark:text-gray-200"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your full name"
+              required
+              class="w-full rounded-md border border-gray-300 dark:border-gray-600 px-4 py-2 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primaryLight outline-none"
+            />
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block mb-2 font-semibold text-gray-800 dark:text-gray-200"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your.email@example.com"
+              required
+              class="w-full rounded-md border border-gray-300 dark:border-gray-600 px-4 py-2 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primaryLight outline-none"
+            />
+          </div>
+          <div>
+            <label
+              for="message"
+              class="block mb-2 font-semibold text-gray-800 dark:text-gray-200"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Write your message here..."
+              required
+              class="w-full rounded-md border border-gray-300 dark:border-gray-600 px-4 py-2 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primaryLight outline-none resize-none"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full py-3 bg-gradient-to-r from-primaryLight to-accent text-white font-semibold rounded-full shadow-lg hover:shadow-accent/80 hover:scale-105 transition"
+          >
+            Send Message
+          </button>
+        </form>
+        <div
+          class="mt-10 text-center text-gray-600 dark:text-gray-400 select-text"
+        >
+          <p><i class="fas fa-phone-alt mr-2"></i> +92 300 0256232</p>
+          <p>
+            <i class="fas fa-envelope mr-2"></i>
+            <a
+              href="mailto:sarmad.52422@gmail.com"
+              class="underline hover:text-accent"
+              >sarmad.52422@gmail.com</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      class="py-12 text-center bg-gradient-to-tr from-primaryLight to-accent text-white select-none"
+    >
+      <p>© 2025 Sarmad Ali. Crafted with passion & ☕.</p>
+    </footer>
+
+    <script>
+      AOS.init({ duration: 900, once: true });
+
+      const themeToggleBtn = document.getElementById("themeToggle");
+      const icon = themeToggleBtn.querySelector("i");
+      const savedTheme = localStorage.getItem("dark");
+
+      if (
+        savedTheme === "1" ||
+        (!savedTheme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+        icon.classList.replace("fa-moon", "fa-sun");
+      }
+
+      themeToggleBtn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("dark", isDark ? "1" : "0");
+        icon.classList.toggle("fa-moon", !isDark);
+        icon.classList.toggle("fa-sun", isDark);
+      });
+    </script>
+  </body>
 </html>
-
